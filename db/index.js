@@ -1,3 +1,4 @@
+// Fake database that we are exporting out to be used
 module.exports = [
     {
         username: "John Doe",

@@ -28,6 +28,7 @@
         crossorigin="anonymous"></script>
     <script>
 
+        // On page load, make a request to our API on the route /api/users.
         axios.get('/api/users')
             .then(({ data: { data } }) => {
                 console.log(data)
