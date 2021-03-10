@@ -40,10 +40,39 @@
     </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"></script>
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
     <script>
-        
+
+        document.getElementById("submit").addEventListener("click", (event) => {
+            event.preventDefault()
+
+            let username = document.getElementById("username").value
+            let email = document.getElementById("email").value
+            let phone = document.getElementById("phone").value
+            let password = document.getElementById("password").value
+
+            let newUser = {
+                username: username,
+                email: email,
+                phone: phone,
+                password: password
+            }
+
+            axios.post('/api/user', newUser)
+                .then((res) => {
+                    console.log(res)
+
+                    document.getElementById("username").value = ''
+                    document.getElementById("email").value = ''
+                    document.getElementById("phone").value = ''
+                    document.getElementById("password").value = ''
+                })
+                .catch(err => console.error(err))
+
+        })
+
+
     </script>
 </body>
 

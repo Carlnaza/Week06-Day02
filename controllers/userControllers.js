@@ -9,7 +9,18 @@ router.get('/users', (req, res) => {
     })
 })
 
-router.get('/one_user', (req, res) => {
+router.post('/user', (req, res) => {
+
+    let newUser = {
+        username: req.body.username,
+        email: req.body.email,
+        phone: req.body.phone,
+        password: req.body.password
+    }
+
+    users.push(newUser)
+
+    res.sendStatus(200)
 
 })
 
