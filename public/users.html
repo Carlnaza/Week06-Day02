@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="/">Go home</a>
+
+    <h1>All Registered Users</h1>
+
+    <ul id="users">
+        <li>
+            <p>Username: Jane Doe</p>
+            <p>Email: janedoe@email.com</p>
+            <p>Phone: 1234567890</p>
+            <p>Password: 1234</p>
+        </li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+    <script>
+
+        axios.get('/api/users')
+            .then(({ data: { data } }) => {
+                console.log(data)
+
+                for (let i = 0; i < data.length; i++) {
+                    let newUser = document.createElement('li')
+                    newUser.innerHTML = `
+                    <p>Username: ${data[i].username}</p>
+                    <p>Email: ${data[i].email}</p>
+                    <p>Phone: ${data[i].phone}</p>
+                    <p>Password: ${data[i].password}</p>
+                    `
+
+                    document.getElementById("users").append(newUser)
+                }
+            })
+            .catch(err => console.error(err))
+
+    </script>
+</body>
+
+</html>

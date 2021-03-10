@@ -1,0 +1,24 @@
+{
+  "name": "week06-day02",
+  "version": "1.0.0",
+  "description": "- Intro & Install Heroku\r - Introduction to Full Stack\r - File/Folder Structure for Full Stack App\r - Front-end Axios Request to API\r - Deploying to Heroku\r - (Mini Project) Hot Restaurant",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlnaza/Week06-Day02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlnaza/Week06-Day02/issues"
+  },
+  "homepage": "https://github.com/Carlnaza/Week06-Day02#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
